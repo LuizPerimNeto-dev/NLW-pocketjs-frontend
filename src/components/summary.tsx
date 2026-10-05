@@ -1,4 +1,4 @@
-import { Plus } from "lucide-react";
+import { CheckCircle2, Plus } from "lucide-react";
 import { Button } from "./ui/button";
 import { DialogTrigger } from "./ui/dialog";
 import { InOrbitIcon } from "./in-orbit-icon";
@@ -35,11 +35,78 @@ export function Summary() {
             </div>
 
             <Separator />
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
                 <OutlineButton>
-                    <Plus className="size-4 text-zinc-600"/>
+                    <Plus className="size-4 text-zinc-600" />
                     Meditar
                 </OutlineButton>
+
+                <OutlineButton>
+                    <Plus className="size-4 text-zinc-600" />
+                    Nadar
+                </OutlineButton>
+
+                <OutlineButton>
+                    <Plus className="size-4 text-zinc-600" />
+                    Correr
+                </OutlineButton>
+
+                <OutlineButton>
+                    <Plus className="size-4 text-zinc-600" />
+                    Praticar exercício
+                </OutlineButton>
+
+                <OutlineButton>
+                    <Plus className="size-4 text-zinc-600" />
+                    Acordar cedo
+                </OutlineButton>
+            </div>
+
+            <div className="flex flex-col gap-6">
+                <h2 className="text-xl fount-medium">Sua semana</h2>
+
+                <div className="flex flex-col gap-4">
+                    <h3 className="font-medium">
+                        Domingo{' '}
+                        <span className="text-zinc-400 text-xs">(10 de Agosto)</span>
+                    </h3>
+
+                    <ul className="flex flex-col gap-3">
+                        <li className="flex items-center gap-2">
+                            <CheckCircle2 className="size-4 text-pink-500" />
+                            <span className="text-sm text-zinc-400">Você completou "
+                                <span className="text-zinc-100">Acordar cedo</span>" as {' '}
+                                <span className="text-zinc-100">8:13h</span>
+                            </span>
+                        </li>
+
+                        <li className="flex items-center gap-2">
+                            <CheckCircle2 className="size-4 text-pink-500" />
+                            <span className="text-sm text-zinc-400">Você completou "
+                                <span className="text-zinc-100">Acordar cedo</span>" as {' '}
+                                <span className="text-zinc-100">8:13h</span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div className="flex flex-col gap-4">
+                    <h3 className="font-medium">
+                        Segunda{' '}
+                        <span className="text-zinc-400 text-xs">(11 de Agosto)</span>
+                    </h3>
+
+                    <ul className="flex flex-col gap-3">
+                        <li className="flex items-center gap-2">
+                            <CheckCircle2 className="size-4 text-pink-500" />
+                            <span className="text-sm text-zinc-400">Você completou "
+                                <span className="text-zinc-100">Acordar cedo</span>" as {' '}
+                                <span className="text-zinc-100">8:13h</span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     )

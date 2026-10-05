@@ -44,13 +44,13 @@ export function CreateGoal() {
 
                                 <RadioGroupItem value='2'>
                                     <RadioGroupIndicator />
-                                    <span className='text-zinc-300 text-sm font-medium leading-none'>1x na semana</span>
+                                    <span className='text-zinc-300 text-sm font-medium leading-none'>2x na semana</span>
                                     <span className='text-lg leading-none'>🙂</span>
                                 </RadioGroupItem>
 
                                 <RadioGroupItem value='3'>
                                     <RadioGroupIndicator />
-                                    <span className='text-zinc-300 text-sm font-medium leading-none'>1x na semana</span>
+                                    <span className='text-zinc-300 text-sm font-medium leading-none'>3x na semana</span>
                                     <span className='text-lg leading-none'>😎</span>
                                 </RadioGroupItem>
                             </RadioGroup>
