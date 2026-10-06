@@ -1,39 +1,36 @@
-
+import { useEffect, useState } from 'react'
 import { Dialog } from './components/ui/dialog'
 import { CreateGoal } from './components/created-goal'
-import { useEffect, useState } from 'react'
-//import { EmptyGoals } from './components/empty-goals'
-//import { Summary } from './components/summary'
+import { Summary } from './components/summary'
+import { EmptyGoals } from './components/empty-goals'
+import { useQuery } from '@tanstack/react-query'
+
+type SummaryResponse = {
+  completed: number;
+  total: number;
+  goalsPerDay: Record<string, {
+    id: string;
+    title: string;
+    completedAt: string;
+  }[]>;
+}
 
 export function App() {
-  const [count, setCount] = useState(5)
-  const [summary, setSummary] = useState(null)
+ 
+  const { data } = useQuery<SummaryResponse>({
+    queryKey: ['summary'],
+    queryFn: async () => {
+      const response = await fetch('http://localhost:3333/summary')
+      const data = await response.json()
 
-  function increment() {
-    setCount(count + 1)
-  }
-
-  useEffect(() => {
-    fetch('http://localhost:3333/summary').then((response) => {
-      return response.json()
-    }).then(data => {
-      //setSummary(data) 
-    }, [])
+      return data
+    }
   })
 
   return (
     <Dialog>
-      <button type='button' onClick={increment}>
-        Incrementar
-      </button>
-      <h1 className='text-4xl'>{count}</h1>
 
-      <pre>
-        {JSON.stringify(summary, null, 2)}</pre>
-
-      {/* <EmptyGoals/> */}
-
-      {/*  <Summary /> */}
+      {data?.total && data.total > 0 ? <Summary /> : <EmptyGoals />}
 
       <CreateGoal />
     </Dialog>
