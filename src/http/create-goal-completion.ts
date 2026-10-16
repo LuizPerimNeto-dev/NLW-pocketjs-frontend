@@ -1,4 +1,4 @@
-export async function createGoalCompleetion(goalId: string) {
+export async function createGoalCompletion(goalId: string) {
     await fetch('http://localhost:3333/completions', {
         method: 'POST',
         headers: {
